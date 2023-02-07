@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr_FR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="styles/ico.jpg">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script type="text/javascript" src="script2.js"></script>
+    <title>Goku-Clicker</title>
+</head>
+
+<body>
+    <header>
+        <h1><u>Goku Clicker</u></h1>
+        <p id="beansTotal">Nombre d'haricot magique trouvé : 0</p>
+        <p id="clicks">Nombre de clics : 0</p>
+        <p id="clicksTotal">Nombre de clics au total : 0 </p>
+        <p id="bonus">Recharges Ki disponibles : 0</p>
+        <br>
+
+        <div class="bonus">
+            <h2><u>Les bonus</u></h2>
+            <h3>2 pts</h3>
+            <button onclick="bonus1()"><img src="styles/boule1.png" alt="Bonus1" style="width: 100px"></button>
+            <h3>4 pts</h3>
+            <button onclick="bonus2()"><img src="styles/boule2.png" alt="Bonus2" style="width: 100px"></button>
+            <h3>6 pts</h3>
+            <button onclick="bonus3()"><img src="styles/boule3.png" alt="Bonus3" style="width: 100px"></button>
+            <h3>8 pts</h3>
+            <button onclick="bonus4()"><img src="styles/boule4.png" alt="Bonus4" style="width: 100px"></button>
+            <br><br>
+            <div class="bonus2">
+                <h3>10 pts</h3>
+                <button onclick="bonus5()"><img src="styles/boule5.png" alt="Bonus5" style="width: 100px"></button>
+                <h3>12 pts</h3>
+                <button onclick="bonus6()"><img src="styles/boule6.png" alt="Bonus6" style="width: 100px"></button>
+                <h3>14 pts</h3>
+                <button onclick="bonus7()"><img src="styles/boule7.png" alt="Bonus7" style="width: 100px"></button>
+            </div></div>
+    </header>
+
+
+    <main>
+        <input id="main-image" onclick="clics()" type="image" src="styles/normal.png" alt="Goku">
+    </main>
+
+
+    <footer>
+        <p>Fait par <a target="_blank" href="https://github.com/EnzoThiourt"><u>Thiourt Enzo</u></a> & <a target="_blank" href="https://github.com/bolten13"><u>Senouci Anas</u></a> | BTS SNIR.</p>
+    </footer>
+</body>
+
+</html>
