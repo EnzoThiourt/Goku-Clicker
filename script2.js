@@ -24,10 +24,15 @@ function play() {
     audio1.play();
 }
 
-let images = ['styles/normal.png', 'styles/ssj1.png', 'styles/ssj2.png', 'styles/ssj3.png', 'styles/ssj4.png', 'styles/ssj divin.png', 'styles/ssj blue.png', 'styles/ui.png'];;
+
+let images = ['styles/normal.png', 'styles/ssj1.png', 'styles/ssj2.png', 'styles/ssj3.png', 'styles/ssj4.png', 'styles/ssj divin.png', 'styles/ssj blue.png','styles/ui2.png', 'styles/ui.png'];
 let img = document.querySelector("main");
 
-
+function Redirect(){
+    if(cptB1!=0){
+    window.location.href="sadom.html";
+    }
+}
 
 
 function clics() {
@@ -36,19 +41,19 @@ function clics() {
     clicks += 1;
     document.getElementById('clicks').innerHTML = "Nombre de clics : " + clicks;
 
-    if (clicks >= 100) {
+    if (clicks >= 50) {
         counter++;
         beansTotal += 1;
         beans += 1;
         document.getElementById('beansTotal').innerHTML = "Nombre d'haricots magiques trouvés : " + beansTotal;
-        clicks -= 100;
-        document.getElementById("main-image").src = images[counter % 8]
+        clicks -= 50;
+        document.getElementById("main-image").src = images[counter % 9];
     }
 
-    if (beans >= 5) {
+    if (beans >= 1) {
         bonus += 1;
         document.getElementById('bonus').innerHTML = "Recharges Ki disponibles :  " + bonus;
-        beans -= 5;
+        beans -= 1;
     }
 
     if (bonusclicks >= 1) {
@@ -63,11 +68,8 @@ function bonus1() {
         bonusclicks += 1;
         clicksbonus += 1;
         cptB1 +=1;
-        audio0.play();
         document.getElementById('bonus').innerHTML = "Recharges Ki disponibles :  " + bonus;
-        document.getElementById('clicksbonus').innerHTML = "Bonus actuel : +" + clicksbonus;
-        audio0.play();
-        
+        play2();
     }
     if(cptB1!=0){
         alert("Tu as déjà utilisé ce bonus !");
@@ -77,144 +79,115 @@ function bonus1() {
 }
 
 function bonus2() {
+    if(cptB2!=1){
+        alert("Tu as déjà utilisé ce bonus !");
+    }
+    if(bonus < 4) {
+        alert("Tu n'as pas assez de recharges Ki !");
+    }
     if (bonus >= 4 && cptB2==1 && cptB1==1) {
         bonus -= 4;
         bonusclicks += 2;
         clicksbonus += 2;
         cptB2 +=1;
-        audio0.play();
         document.getElementById('bonus').innerHTML = "Recharges Ki disponibles :  " + bonus;
-        document.getElementById('clicksbonus').innerHTML = "Bonus actuel : +" + clicksbonus;
-        audio0.play();
-    }
-    if(cptB2!=1){
-        alert("Tu as déjà utilisé ce bonus !");
     }
     if(cptB1!=1){
         alert("Utilises d'abord le bonus précédent !");
-    }
-    if(bonus < 4) {
-        alert("Tu n'as pas assez de recharges Ki !");
     }
 }
 
 
 function bonus3() {
+    if(cptB3!=2){
+        alert("Tu as déjà utilisé ce bonus !");
+    }
+    if(bonus<6) {
+        alert("Tu n'as pas assez de recharges Ki !");
+    }
     if (bonus >= 6 && cptB3==2 && cptB2==2) {
         bonus -= 6;
         bonusclicks += 4;
         clicksbonus += 4;
         cptB3 +=1;
-        audio0.play();
         document.getElementById('bonus').innerHTML = "Recharges Ki disponibles :  " + bonus;
-        document.getElementById('clicksbonus').innerHTML = "Bonus actuel : +" + clicksbonus;
-        audio0.play();
-    }
-    if(cptB3!=2){
-        alert("Tu as déjà utilisé ce bonus !");
     }
     if(cptB2!=2){
         alert("Utilises d'abord le bonus précédent !");
     }
-    if(bonus<6) {
-        alert("Tu n'as pas assez de recharges Ki !");
-    }
 }
 
 function bonus4() {
+    if(cptB4!=3){
+        alert("Tu as déjà utilisé ce bonus !");
+    } 
+    if (bonus<8) {
+        alert("Tu n'as pas assez de recharges Ki !");
+    }
     if (bonus >= 8 && cptB4==3 && cptB3==3) {
         bonus -= 8;
         bonusclicks += 8;
         clicksbonus += 8;
         cptB4 +=1;
-        audio0.play();
         document.getElementById('bonus').innerHTML = "Recharges Ki disponibles :  " + bonus;
-        document.getElementById('clicksbonus').innerHTML = "Bonus actuel : +" + clicksbonus;
-        audio0.play();
     }
-    if(cptB4!=3){
-        alert("Tu as déjà utilisé ce bonus !");
-    } 
     if(cptB3!=3){
         alert("Utilises d'abord le bonus précédent !");
-    }
-    if (bonus<8) {
-        alert("Tu n'as pas assez de recharges Ki !");
     }
 }
 
 function bonus5() {
+    if(cptB5!=4){
+        alert("Tu as déjà utilisé ce bonus !");
+    } 
+    if(bonus<10) {
+        alert("Tu n'as pas assez de recharges Ki !");
+    }
     if (bonus >= 10 && cptB5==4 && cptB4==4) {
         bonus -= 10;
         bonusclicks += 16;
         clicksbonus += 16;
         cptB5 +=1;
-        audio0.play();
         document.getElementById('bonus').innerHTML = "Recharges Ki disponibles :  " + bonus;
-        document.getElementById('clicksbonus').innerHTML = "Bonus actuel : +" + clicksbonus;
-        audio0.play();
     }
-    if(cptB5!=4){
-        alert("Tu as déjà utilisé ce bonus !");
-    } 
     if(cptB4!=4){
         alert("Utilises d'abord le bonus précédent !");
-    }
-    if(bonus<10) {
-        alert("Tu n'as pas assez de recharges Ki !");
     }
 }
 
 function bonus6() {
+    if(cptB6!=5){
+        alert("Tu as déjà utilisé ce bonus !");
+    } 
+    if(bonus<12){
+        alert("Tu n'as pas assez de recharges Ki !");
+    }
     if (bonus >= 12 && cptB6==5 && cptB5==5) {
         bonus -= 12;
         bonusclicks += 32;
         clicksbonus += 32;
         cptB6 +=1;
-        audio0.play();
         document.getElementById('bonus').innerHTML = "Recharges Ki disponibles :  " + bonus;
         document.getElementById('clicksbonus').innerHTML = "Bonus actuel : +" + clicksbonus;
-        audio0.play();
     }
-    if(cptB6!=5){
-        alert("Tu as déjà utilisé ce bonus !");
-    } 
     if(cptB5!=5){
         alert("Utilises d'abord le bonus précédent !");
-    }
-    if(bonus<12){
-        alert("Tu n'as pas assez de recharges Ki !");
     }
 }
 
 function bonus7() {
+    if(bonus<14) {
+        alert("Tu n'as pas assez de recharges Ki !");
+    }
     if (bonus >= 14 && cptB7==6 && cptB6==6) {
         bonus -= 14;
         bonusclicks += 64;
         clicksbonus += 64;
         cptB7 +=1;
-        audio0.play();
         document.getElementById('bonus').innerHTML = "Recharges Ki disponibles :  " + bonus;
-        document.getElementById('clicksbonus').innerHTML = "Bonus actuel : +" + clicksbonus;
-        audio0.play();
-    }
-    if(cptB7!=6){
-        alert("Tu as déjà utilisé ce bonus !");
+        Redirect();
     }
     if(cptB6!=6){
         alert("Utilises d'abord le bonus précédent !");
     }
-    if(bonus<14) {
-        alert("Tu n'as pas assez de recharges Ki !");
-    }
-}
-
-function finish(){
-    if (cptB2!=1){
-        setTimeout(fonctionAExecuter, 5000);
-    }
-}
-
-function fonctionAExecuter(){
-    window.location.hostname='https://youtube.com';
 }
